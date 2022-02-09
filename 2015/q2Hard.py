@@ -5,6 +5,12 @@ sadCount = 0
 
 result = "none"
 
+# Start of complicated
+
+# My thought process
+# I can loop through the string looking for indexes of happy faces
+# and counting each happy face. Then, I have to update my index
+# so that I don't double-count a happy face.
 index = 0
 
 while index != -1:

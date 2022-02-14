@@ -18,16 +18,17 @@ def isConsonant(charToTest):
     # Defines a variable that stores whether the letter is a consonant
     consonantCheck = True
 
-    # For every vowel in the list of vowels...
-    for v in vowels:
-
-        # If the charToTest is the current vowel in the list...
-        if charToTest == v:
-            '''
-                Set the consonant check to represent that the letter is
-                a vowel.
-            '''
-            consonantCheck = False
+    '''
+        If I count all the instances of the charToTest in
+        the vowels array and more than zero instances is
+        found...
+    '''
+    if vowels.count(charToTest) != 0:
+        '''
+            Set the consonant check to represent that the letter is
+            a vowel.
+        '''
+        consonantCheck = False
 
     # Return whether the letter is a consonant or a vowel.
     return consonantCheck
@@ -149,7 +150,7 @@ for i in originalWord:
             the current consonant, the closest vowel to the current consonant, and the
             next consonant in the alphabet.
         '''
-        newWord = "".join([newWord,i,getClosestVowel(i), getNextConsonant(i)])
+        newWord = "".join([newWord, i, getClosestVowel(i), getNextConsonant(i)])
     # If the current letter is not a consonant...
     else:
         '''

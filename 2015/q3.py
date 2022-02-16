@@ -45,10 +45,10 @@ def isConsonant(charToTest):
 def getClosestVowel(charToUse):
 
     '''
-        currentIndex will store the amount of characters on either side
+        shift will store the amount of characters on either side
         of the consonant to check for the closest vowel.
     '''
-    currentIndex = 1
+    shift = 1
 
     # Define a variable that will store the closest vowel to the consonant.
     closestVowel = ""
@@ -64,7 +64,7 @@ def getClosestVowel(charToUse):
                 that is currentIndex spaces away from the consonant
                 is the same as the current vowel in the vowels list...
             '''
-            if chr( ord(charToUse)-currentIndex ) == v:
+            if chr( ord(charToUse)-shift ) == v:
                 # The closest vowel is the current vowel in the list.
                 closestVowel = v
 
@@ -75,7 +75,7 @@ def getClosestVowel(charToUse):
                     consonant is the same as the current vowel in the 
                     vowels list...
                 '''
-            elif ord(charToUse)+currentIndex < ord("z") and chr( ord(charToUse)+currentIndex ) == v:
+            elif ord(charToUse)+shift <= ord("z") and chr( ord(charToUse)+shift ) == v:
                 # The closest vowel is the current vowel in the list.
                 closestVowel = v
 
@@ -84,7 +84,7 @@ def getClosestVowel(charToUse):
             so that we can find a vowel in a spot farther away from
             the consonant.
         '''
-        currentIndex += 1
+        shift += 1
 
     # Once a vowel has been found, return the closest vowel.
     return closestVowel
